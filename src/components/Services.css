@@ -1,0 +1,72 @@
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4f8cff 0%, #38e8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px;
+}
+
+.services-header p {
+  font-size: 1.2rem;
+  color: #385a8a;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.phase-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.phase-card:hover {
+  transform: translateY(-8px);
+}
+
+.phase-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.phase-number {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4f8cff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.phase-card h3 {
+  font-size: 1.5rem;
+  color: #2a3d66;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.phase-card p {
+  color: #385a8a;
+  line-height: 1.6;
+}
