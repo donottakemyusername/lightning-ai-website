@@ -9,8 +9,8 @@ body {
     margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     line-height: 1.6;
-    color: #2a3d66;
-    background: #f8fafc;
+    color: #2d1b4e;
+    background: #faf5ff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -38,74 +38,9 @@ header {
     padding: 20px 40px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: linear-gradient(90deg, #4f8cff 0%, #38e8ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-    letter-spacing: -0.5px;
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-}
-
-.navigation ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.navigation a {
-    color: #2a3d66;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: color 0.2s ease;
-    position: relative;
-}
-
-.navigation a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #4f8cff 0%, #38e8ff 100%);
-    transition: width 0.3s ease;
-}
-
-.navigation a:hover {
-    color: #4f8cff;
-}
-
-.navigation a:hover::after {
-    width: 100%;
-}
-
-/* Home Page Styles */
-.home-page {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f8faff 0%, #fff 100%);
-}
-
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #4f8cff 0%, #38e8ff 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #fbbf24 100%);
     padding: 100px 24px 120px;
     text-align: center;
     position: relative;
@@ -152,7 +87,7 @@ header {
 /* CTA Button */
 .cta-button {
     background: white;
-    color: #4f8cff;
+    color: #a855f7;
     border: none;
     padding: 16px 40px;
     font-size: 1.15rem;
@@ -160,22 +95,24 @@ header {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
     display: inline-block;
     text-decoration: none;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.4);
+    background: linear-gradient(135deg, #a855f7 0%, #fbbf24 100%);
+    color: white;
 }
 
-/* Features Grid */
+/* Features Grid - Fixed to 6 columns */
 .features,
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
     padding: 60px 24px;
     max-width: 1400px;
     margin: 0 auto;
@@ -185,18 +122,19 @@ header {
 .feature,
 .feature-card {
     background: white;
-    padding: 32px 24px;
+    padding: 24px 16px;
     border-radius: 16px;
     text-align: center;
     transition: all 0.3s ease;
     border: 1px solid #e2e8f0;
+    min-width: 0;
 }
 
 .feature:hover,
 .feature-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(79, 140, 255, 0.12);
-    border-color: #4f8cff;
+    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.15);
+    border-color: #a855f7;
 }
 
 .feature-icon {
@@ -207,15 +145,15 @@ header {
 
 .feature h3,
 .feature-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: #2a3d66;
+    color: #7c3aed;
     margin-bottom: 12px;
 }
 
 .feature p,
 .feature-description {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #64748b;
     line-height: 1.5;
 }
@@ -241,15 +179,15 @@ header {
 
 .benefit:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 32px rgba(79, 140, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
 }
 
 .benefit h3 {
     font-size: 1.6rem;
     font-weight: 700;
-    color: #2a3d66;
+    color: #2d1b4e;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #4f8cff 0%, #38e8ff 100%);
+    background: linear-gradient(90deg, #a855f7 0%, #fbbf24 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -262,7 +200,7 @@ header {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, #4f8cff 0%, #38e8ff 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #fbbf24 100%);
     padding: 80px 24px;
     text-align: center;
     color: white;
@@ -291,7 +229,7 @@ header {
 .services-header h1 {
     font-size: 3rem;
     font-weight: 800;
-    background: linear-gradient(90deg, #4f8cff 0%, #38e8ff 100%);
+    background: linear-gradient(90deg, #a855f7 0%, #fbbf24 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 24px;
@@ -307,8 +245,8 @@ header {
 
 .phases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
     margin-bottom: 80px;
 }
 
@@ -332,22 +270,40 @@ header {
 .phase-number {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #4f8cff;
+    color: #a855f7;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 12px;
 }
 
 .phase-card h3 {
-    font-size: 1.5rem;
-    color: #2a3d66;
+    font-size: 1.3rem;
+    color: #7c3aed;
     margin-bottom: 16px;
     font-weight: 700;
 }
 
 .phase-card p {
+    font-size: 0.95rem;
     color: #385a8a;
     line-height: 1.6;
+}
+
+/* About Page - Values Grid Fix */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
 }
 
 /* Discovery Form */
@@ -390,8 +346,8 @@ header {
 }
 
 .radio-options label:hover {
-    background: #e0f7fa;
-    border-color: #4f8cff;
+    background: #f3e8ff;
+    border-color: #a855f7;
 }
 
 .radio-options input[type="radio"] {
@@ -403,8 +359,8 @@ header {
 
 /* Footer Styles */
 .footer {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    color: #cbd5e1;
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 100%);
+    color: #d8b4fe;
     padding: 60px 0 24px;
 }
 
@@ -435,7 +391,7 @@ header {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 16px;
-    background: linear-gradient(90deg, #4f8cff 0%, #38e8ff 100%);
+    background: linear-gradient(90deg, #a855f7 0%, #fbbf24 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -443,7 +399,7 @@ header {
 .footer-description {
     font-size: 0.95rem;
     line-height: 1.7;
-    color: #94a3b8;
+    color: #d8b4fe;
 }
 
 .footer-links {
@@ -457,14 +413,14 @@ header {
 }
 
 .footer-links a {
-    color: #cbd5e1;
+    color: #d8b4fe;
     text-decoration: none;
     transition: color 0.2s ease;
     font-size: 0.95rem;
 }
 
 .footer-links a:hover {
-    color: #4f8cff;
+    color: #fbbf24;
 }
 
 .footer-bottom {
@@ -472,13 +428,21 @@ header {
     padding-top: 24px;
     text-align: center;
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: #d8b4fe;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .features-grid {
+    .features-grid, .features {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -498,21 +462,12 @@ header {
     .feature,
     .feature-card {
         padding: 18px;
-        min-height: 130px;
     }
 }
 
 @media (max-width: 768px) {
     header {
         padding: 16px 20px;
-    }
-    
-    .logo h1 {
-        font-size: 1.3rem;
-    }
-    
-    .navigation ul {
-        gap: 20px;
     }
     
     .hero h1,
@@ -540,6 +495,14 @@ header {
     
     .services-header h1 {
         font-size: 2.4rem;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
     }
     
     .footer-content {

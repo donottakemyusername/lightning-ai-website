@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'; // Assuming you will create a separate CSS file for header styles
+import logo from '../assets/images/lightning-ai-logo.png';
+import './Header.css';
 
 const Header: React.FC = () => {
     return (
         <header className="header">
-            <div className="logo">
-                <h1>Lightning AI & Consulting</h1>
-            </div>
+            <Link to="/" className="logo">
+                <div className="logo-container">
+                    <img src={logo} alt="Lightning AI & Consulting" className="logo-image" />
+                </div>
+            </Link>
             <nav className="navigation">
                 <ul>
                     <li><Link to="/">Home</Link></li>

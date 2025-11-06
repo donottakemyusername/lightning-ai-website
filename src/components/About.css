@@ -4,7 +4,7 @@
 
 /* Hero Section */
 .about-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     color: white;
     padding: 100px 24px;
     text-align: center;
@@ -94,6 +94,33 @@
     color: white;
 }
 
+.founder-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Adjust positioning for each founder */
+.founder-card:first-child .founder-image img {
+    /* Jeffrey's photo - move right */
+    object-position: 55% center;
+}
+
+.founder-card:last-child .founder-image img {
+    /* Bowen's photo - move down and left */
+    object-position: 20% 35%;
+}
+
 .placeholder-icon {
     font-size: 5rem;
     margin-bottom: 16px;
@@ -119,7 +146,7 @@
 
 .founder-title {
     font-size: 1.2rem;
-    color: #667eea;
+    color: #a855f7;
     font-weight: 600;
     margin-bottom: 24px;
 }
@@ -131,7 +158,7 @@
     margin-bottom: 16px;
     font-style: italic;
     padding-left: 20px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #a855f7;
 }
 
 /* Story Section */
@@ -150,13 +177,24 @@
 
 .story-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .story-block {
     text-align: center;
-    padding: 32px;
+    padding: 32px 20px;
+    background: rgba(168, 85, 247, 0.05);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.story-block:hover {
+    background: rgba(168, 85, 247, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.15);
 }
 
 .story-icon {
@@ -169,18 +207,23 @@
     font-weight: 700;
     color: #2d3748;
     margin-bottom: 16px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .story-block p {
     font-size: 1.05rem;
     line-height: 1.7;
     color: #4a5568;
+    text-align: left;
 }
 
 /* Values Section */
 .values-section {
     padding: 80px 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     color: white;
 }
 
@@ -189,30 +232,32 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 64px;
+    color: white;
 }
 
 .values-grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
 .value-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(168, 85, 247, 0.3);
 }
 
 .value-card:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(15, 23, 42, 0.95);
     transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(251, 191, 36, 0.8);
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
 }
 
 .value-icon {
@@ -223,13 +268,14 @@
 .value-card h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    color: #fbbf24;
 }
 
 .value-card p {
     font-size: 1.05rem;
     line-height: 1.6;
-    opacity: 0.95;
+    color: #e5e7eb;
 }
 
 /* CTA Section */
@@ -253,7 +299,7 @@
 }
 
 .cta-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     color: white;
     border: none;
     padding: 18px 48px;
@@ -262,15 +308,25 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
 }
 
 .cta-button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.4);
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .story-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .about-hero h1 {
         font-size: 2.5rem;
@@ -302,5 +358,9 @@
 
     .about-cta p {
         font-size: 1.1rem;
+    }
+    
+    .story-block h3 {
+        min-height: auto;
     }
 }
