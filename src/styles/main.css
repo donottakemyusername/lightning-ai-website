@@ -1,3 +1,6 @@
+/* Import futuristic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 /* Global Styles */
 * {
     margin: 0;
@@ -7,12 +10,17 @@
 
 body {
     margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'Space Grotesk', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #2d1b4e;
-    background: #faf5ff;
+    color: #e2e8f0;
+    background: #0a0e17;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.02em;
 }
 
 /* Header Styles */
@@ -20,13 +28,15 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: rgba(10, 14, 23, 0.95);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s ease;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .header:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 30px rgba(59, 130, 246, 0.2);
 }
 
 header {
@@ -40,7 +50,7 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #a855f7 0%, #fbbf24 100%);
+    background: linear-gradient(135deg, #0a0e17 0%, #1e1b4b 50%, #3b82f6 100%);
     padding: 100px 24px 120px;
     text-align: center;
     position: relative;
@@ -54,8 +64,8 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -68,43 +78,49 @@ header {
 
 .hero h1,
 .hero-content h1 {
+    font-family: 'Orbitron', monospace;
     font-size: 3.5rem;
     font-weight: 800;
     color: white;
     margin-bottom: 24px;
     line-height: 1.2;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    text-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .hero p,
 .hero-content p {
+    font-family: 'Rajdhani', sans-serif;
     font-size: 1.3rem;
-    color: rgba(255,255,255,0.95);
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 40px;
     line-height: 1.6;
 }
 
 /* CTA Button */
 .cta-button {
-    background: white;
-    color: #a855f7;
-    border: none;
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: 1px solid rgba(59, 130, 246, 0.5);
     padding: 16px 40px;
     font-size: 1.15rem;
     font-weight: 700;
-    border-radius: 50px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
     display: inline-block;
     text-decoration: none;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.4);
-    background: linear-gradient(135deg, #a855f7 0%, #fbbf24 100%);
-    color: white;
+    box-shadow: 0 0 60px rgba(59, 130, 246, 0.5);
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
 }
 
 /* Features Grid - Fixed to 6 columns */
@@ -116,25 +132,27 @@ header {
     padding: 60px 24px;
     max-width: 1400px;
     margin: 0 auto;
-    background: white;
+    background: linear-gradient(180deg, #000000 0%, #0a0e17 50%, #000000 100%);
 }
 
 .feature,
 .feature-card {
-    background: white;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
     padding: 24px 16px;
-    border-radius: 16px;
+    border-radius: 12px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(59, 130, 246, 0.1);
     min-width: 0;
 }
 
 .feature:hover,
 .feature-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.15);
-    border-color: #a855f7;
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(30, 41, 59, 0.7);
 }
 
 .feature-icon {
@@ -145,16 +163,20 @@ header {
 
 .feature h3,
 .feature-title {
+    font-family: 'Orbitron', monospace;
     font-size: 1rem;
     font-weight: 700;
-    color: #7c3aed;
+    color: #e0e7ff;
     margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .feature p,
 .feature-description {
+    font-family: 'Rajdhani', sans-serif;
     font-size: 0.85rem;
-    color: #64748b;
+    color: #94a3b8;
     line-height: 1.5;
 }
 
@@ -166,59 +188,71 @@ header {
     padding: 80px 24px;
     max-width: 1400px;
     margin: 0 auto;
-    background: #f8fafc;
+    background: linear-gradient(135deg, #0a0e17 0%, #000000 100%);
 }
 
 .benefit {
-    background: white;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.1);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .benefit:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(30, 41, 59, 0.7);
 }
 
 .benefit h3 {
+    font-family: 'Orbitron', monospace;
     font-size: 1.6rem;
     font-weight: 700;
-    color: #2d1b4e;
+    color: #e0e7ff;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #a855f7 0%, #fbbf24 100%);
+    background: linear-gradient(90deg, #60a5fa 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .benefit p {
+    font-family: 'Rajdhani', sans-serif;
     font-size: 1rem;
-    color: #475569;
+    color: #94a3b8;
     line-height: 1.7;
 }
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, #a855f7 0%, #fbbf24 100%);
+    background: linear-gradient(135deg, #0a0e17 0%, #1e1b4b 50%, #3b82f6 100%);
     padding: 80px 24px;
     text-align: center;
     color: white;
 }
 
 .cta-section h2 {
+    font-family: 'Orbitron', monospace;
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 32px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    text-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
     color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 /* Services Page */
 .services-container {
+    font-family: 'Space Grotesk', sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 24px;
+    background: linear-gradient(135deg, #0a0e17 0%, #000000 100%);
+    min-height: 100vh;
 }
 
 .services-header {
@@ -227,17 +261,20 @@ header {
 }
 
 .services-header h1 {
+    font-family: 'Orbitron', monospace;
     font-size: 3rem;
     font-weight: 800;
-    background: linear-gradient(90deg, #a855f7 0%, #fbbf24 100%);
+    background: linear-gradient(90deg, #60a5fa 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 24px;
+    text-transform: uppercase;
 }
 
 .services-header p {
+    font-family: 'Rajdhani', sans-serif;
     font-size: 1.2rem;
-    color: #385a8a;
+    color: #94a3b8;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
@@ -251,15 +288,20 @@ header {
 }
 
 .phase-card {
-    background: white;
-    border-radius: 20px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-radius: 12px;
     padding: 32px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .phase-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(30, 41, 59, 0.7);
 }
 
 .phase-icon {
@@ -268,24 +310,28 @@ header {
 }
 
 .phase-number {
+    font-family: 'Orbitron', monospace;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #a855f7;
+    color: #60a5fa;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
     margin-bottom: 12px;
 }
 
 .phase-card h3 {
+    font-family: 'Orbitron', monospace;
     font-size: 1.3rem;
-    color: #7c3aed;
+    color: #e0e7ff;
     margin-bottom: 16px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .phase-card p {
+    font-family: 'Rajdhani', sans-serif;
     font-size: 0.95rem;
-    color: #385a8a;
+    color: #94a3b8;
     line-height: 1.6;
 }
 
@@ -299,18 +345,30 @@ header {
 }
 
 .value-card {
-    background: white;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.1);
     padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(30, 41, 59, 0.7);
 }
 
 /* Discovery Form */
 .discovery-form-container {
+    font-family: 'Space Grotesk', sans-serif;
     padding: 60px 20px;
     max-width: 980px;
     margin: 0 auto 80px;
+    background: linear-gradient(135deg, #0a0e17 0%, #000000 100%);
+    min-height: 100vh;
 }
 
 .radio-group {
@@ -318,11 +376,14 @@ header {
 }
 
 .radio-group > label {
+    font-family: 'Orbitron', monospace;
     font-size: 1.1rem;
-    color: #2a3d66;
+    color: #e0e7ff;
     margin-bottom: 16px;
     display: block;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .radio-options {
@@ -333,21 +394,23 @@ header {
 }
 
 .radio-options label {
+    font-family: 'Rajdhani', sans-serif;
     display: flex;
     gap: 12px;
     align-items: center;
     padding: 12px;
-    border-radius: 10px;
-    background: #fbfdff;
-    border: 1px solid #eef6ff;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.1);
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: normal;
+    color: #94a3b8;
 }
 
 .radio-options label:hover {
-    background: #f3e8ff;
-    border-color: #a855f7;
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(59, 130, 246, 0.4);
 }
 
 .radio-options input[type="radio"] {
@@ -355,13 +418,16 @@ header {
     height: 20px;
     margin: 0;
     cursor: pointer;
+    accent-color: #3b82f6;
 }
 
 /* Footer Styles */
 .footer {
-    background: linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 100%);
-    color: #d8b4fe;
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #0a0e17 100%);
+    color: #94a3b8;
     padding: 60px 0 24px;
+    border-top: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .footer-container {
@@ -378,10 +444,13 @@ header {
 }
 
 .footer-section h4 {
-    color: white;
+    font-family: 'Orbitron', monospace;
+    color: #e0e7ff;
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .footer-logo {
@@ -391,15 +460,15 @@ header {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 16px;
-    background: linear-gradient(90deg, #a855f7 0%, #fbbf24 100%);
+    background: linear-gradient(90deg, #60a5fa 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .footer-description {
     font-size: 0.95rem;
-    line-height: 1.7;
-    color: #d8b4fe;
+    color: #64748b;
+    line-height: 1.6;
 }
 
 .footer-links {
@@ -413,27 +482,21 @@ header {
 }
 
 .footer-links a {
-    color: #d8b4fe;
+    font-family: 'Rajdhani', sans-serif;
+    color: #94a3b8;
     text-decoration: none;
-    transition: color 0.2s ease;
-    font-size: 0.95rem;
+    transition: color 0.2s;
+    font-weight: 500;
 }
 
 .footer-links a:hover {
-    color: #fbbf24;
+    color: #60a5fa;
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 24px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #d8b4fe;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .features-grid, .features {
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .features-grid,
+    .features {
         grid-template-columns: repeat(3, 1fr);
     }
     
@@ -446,100 +509,21 @@ header {
     }
 }
 
-@media (max-width: 900px) {
-    .hero h1,
-    .hero-content h1 {
-        font-size: 2.4rem;
-    }
-    
-    .features,
-    .features-grid {
-        gap: 16px;
-        padding: 28px 16px;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .feature,
-    .feature-card {
-        padding: 18px;
-    }
-}
-
 @media (max-width: 768px) {
-    header {
-        padding: 16px 20px;
-    }
-    
-    .hero h1,
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p,
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-    
-    .benefits {
-        grid-template-columns: 1fr;
-        padding: 40px 16px;
-    }
-    
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-    
-    .services-container {
-        padding: 60px 20px;
-    }
-    
-    .services-header h1 {
-        font-size: 2.4rem;
-    }
-    
-    .phases-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-    
-    .footer-container {
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 520px) {
-    .hero,
-    .hero-section {
-        padding: 56px 12px;
-    }
-    
-    .hero h1,
-    .hero-content h1 {
-        font-size: 1.9rem;
-    }
-    
-    .cta-button {
-        padding: 12px 22px;
-        font-size: 0.95rem;
-    }
-    
-    .features,
-    .features-grid {
-        grid-template-columns: 1fr;
+    .features-grid,
+    .features {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
-    .hero h1,
-    .hero-content h1 {
-        font-size: 2rem;
+    .features-grid,
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .phases-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
     }
 }

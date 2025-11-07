@@ -1,10 +1,12 @@
 .about-container {
     width: 100%;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    min-height: 100vh;
 }
 
 /* Hero Section */
 .about-hero {
-    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #a855f7 100%);
     color: white;
     padding: 100px 24px;
     text-align: center;
@@ -14,6 +16,7 @@
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: 16px;
+    text-shadow: 0 2px 20px rgba(168, 85, 247, 0.5);
 }
 
 .about-tagline {
@@ -25,7 +28,7 @@
 /* Mission Section */
 .mission-section {
     padding: 80px 24px;
-    background: white;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
 }
 
 .content-wrapper {
@@ -36,72 +39,75 @@
 .mission-section h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2d3748;
+    color: #e0e7ff;
+    margin-bottom: 24px;
     text-align: center;
-    margin-bottom: 48px;
 }
 
 .mission-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: #cbd5e1;
     line-height: 1.8;
-    color: #4a5568;
-    margin-bottom: 24px;
+    text-align: center;
 }
 
 /* Founders Section */
 .founders-section {
     padding: 80px 24px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
 }
 
 .founders-section h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2d3748;
+    color: #e0e7ff;
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 60px;
 }
 
 .founders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 48px;
 }
 
 .founder-card {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: rgba(30, 27, 75, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 20px;
+    padding: 32px;
     transition: all 0.3s ease;
 }
 
 .founder-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.4);
+    border-color: #a855f7;
+    background: rgba(49, 46, 129, 0.6);
 }
 
 .founder-image-placeholder {
     width: 100%;
     height: 300px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #312e81 0%, #1e1b4b 100%);
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    margin-bottom: 24px;
 }
 
 .founder-image {
     width: 100%;
     height: 300px;
+    border-radius: 16px;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #312e81 0%, #1e1b4b 100%);
 }
 
 .founder-image img {
@@ -112,208 +118,207 @@
 
 /* Adjust positioning for each founder */
 .founder-card:first-child .founder-image img {
-    /* Jeffrey's photo - move right */
     object-position: 55% center;
 }
 
 .founder-card:last-child .founder-image img {
-    /* Bowen's photo - move down and left */
-    object-position: 20% 35%;
+    object-position: 35% 55%;
 }
 
 .placeholder-icon {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 16px;
-    opacity: 0.7;
+    color: #a855f7;
 }
 
 .placeholder-text {
-    font-size: 1.2rem;
-    font-weight: 600;
-    opacity: 0.9;
+    color: #cbd5e1;
+    font-size: 1.1rem;
 }
 
 .founder-info {
-    padding: 40px;
+    text-align: center;
 }
 
 .founder-info h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2d3748;
+    font-size: 1.8rem;
+    color: #e0e7ff;
     margin-bottom: 8px;
+    font-weight: 700;
 }
 
 .founder-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #a855f7;
+    margin-bottom: 20px;
     font-weight: 600;
-    margin-bottom: 24px;
 }
 
 .founder-story p {
-    font-size: 1.05rem;
+    font-size: 1rem;
+    color: #cbd5e1;
     line-height: 1.7;
-    color: #4a5568;
+    text-align: left;
     margin-bottom: 16px;
-    font-style: italic;
-    padding-left: 20px;
-    border-left: 4px solid #a855f7;
+}
+
+.founder-story p:last-child {
+    margin-bottom: 0;
 }
 
 /* Story Section */
 .story-section {
     padding: 80px 24px;
-    background: white;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
 }
 
 .story-section h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2d3748;
+    color: #e0e7ff;
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 60px;
 }
 
 .story-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 32px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .story-block {
-    text-align: center;
-    padding: 32px 20px;
-    background: rgba(168, 85, 247, 0.05);
+    background: rgba(30, 27, 75, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 32px;
     border-radius: 16px;
     transition: all 0.3s ease;
 }
 
 .story-block:hover {
-    background: rgba(168, 85, 247, 0.1);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.4);
+    border-color: #a855f7;
+    background: rgba(49, 46, 129, 0.6);
 }
 
 .story-icon {
-    font-size: 4rem;
-    margin-bottom: 24px;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
 }
 
 .story-block h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2d3748;
+    font-size: 1.3rem;
+    color: #e0e7ff;
     margin-bottom: 16px;
+    font-weight: 700;
     min-height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    background: linear-gradient(90deg, #c084fc 0%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .story-block p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #4a5568;
-    text-align: left;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
 }
 
 /* Values Section */
 .values-section {
     padding: 80px 24px;
-    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
-    color: white;
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
 }
 
 .values-section h2 {
     font-size: 2.5rem;
     font-weight: 700;
+    color: #e0e7ff;
     text-align: center;
-    margin-bottom: 64px;
-    color: white;
+    margin-bottom: 60px;
 }
 
 .values-grid {
-    max-width: 1200px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .value-card {
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(30, 27, 75, 0.5);
     backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 32px;
+    border-radius: 16px;
     transition: all 0.3s ease;
-    border: 2px solid rgba(168, 85, 247, 0.3);
 }
 
 .value-card:hover {
-    background: rgba(15, 23, 42, 0.95);
     transform: translateY(-8px);
-    border-color: rgba(251, 191, 36, 0.8);
-    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.4);
+    border-color: #a855f7;
+    background: rgba(49, 46, 129, 0.6);
 }
 
 .value-icon {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
 }
 
 .value-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-size: 1.3rem;
     color: #fbbf24;
+    margin-bottom: 16px;
+    font-weight: 700;
 }
 
 .value-card p {
-    font-size: 1.05rem;
+    color: #cbd5e1;
     line-height: 1.6;
-    color: #e5e7eb;
 }
 
 /* CTA Section */
 .about-cta {
-    padding: 100px 24px;
-    background: white;
+    padding: 80px 24px;
     text-align: center;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #a855f7 100%);
 }
 
 .about-cta h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2d3748;
+    color: white;
     margin-bottom: 24px;
 }
 
 .about-cta p {
-    font-size: 1.3rem;
-    color: #4a5568;
-    margin-bottom: 40px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
 }
 
 .cta-button {
-    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
-    color: white;
-    border: none;
-    padding: 18px 48px;
-    font-size: 1.2rem;
-    font-weight: 700;
+    display: inline-block;
+    padding: 16px 48px;
+    background: white;
+    color: #a855f7;
+    text-decoration: none;
     border-radius: 50px;
-    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
 .cta-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive Design */
@@ -331,36 +336,25 @@
     .about-hero h1 {
         font-size: 2.5rem;
     }
-
+    
     .about-tagline {
         font-size: 1.2rem;
     }
-
+    
     .founders-grid {
         grid-template-columns: 1fr;
     }
-
-    .story-content {
-        grid-template-columns: 1fr;
-    }
-
+    
+    .story-content,
     .values-grid {
         grid-template-columns: 1fr;
     }
-
-    .founder-info {
-        padding: 24px;
-    }
-
+    
+    .mission-section h2,
+    .founders-section h2,
+    .story-section h2,
+    .values-section h2,
     .about-cta h2 {
         font-size: 2rem;
-    }
-
-    .about-cta p {
-        font-size: 1.1rem;
-    }
-    
-    .story-block h3 {
-        min-height: auto;
     }
 }
