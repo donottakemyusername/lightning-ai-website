@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/lightning-ai-website/static/css/main.ff8593b7.css",
-    "main.js": "/lightning-ai-website/static/js/main.089ab2ac.js",
+    "main.js": "/lightning-ai-website/static/js/main.eb60c337.js",
     "static/media/Jeffrey.jpg": "/lightning-ai-website/static/media/Jeffrey.faf09a0b34063e850094.jpg",
     "static/media/Bowen.jpg": "/lightning-ai-website/static/media/Bowen.fe47257a5366149d6464.jpg",
     "static/media/lightning-ai-logo.png": "/lightning-ai-website/static/media/lightning-ai-logo.7fd40a4ca278df5ca069.png",
     "index.html": "/lightning-ai-website/index.html",
     "main.ff8593b7.css.map": "/lightning-ai-website/static/css/main.ff8593b7.css.map",
-    "main.089ab2ac.js.map": "/lightning-ai-website/static/js/main.089ab2ac.js.map"
+    "main.eb60c337.js.map": "/lightning-ai-website/static/js/main.eb60c337.js.map"
   },
   "entrypoints": [
     "static/css/main.ff8593b7.css",
-    "static/js/main.089ab2ac.js"
+    "static/js/main.eb60c337.js"
   ]
 }
