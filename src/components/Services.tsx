@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './Services.css';
+import { Link } from 'react-router-dom';
 
 const Services: React.FC = () => {
   const [ref, inView] = useInView({
@@ -91,7 +92,6 @@ const Services: React.FC = () => {
             Get Started Today
           </Link>
         </motion.div>
-      </motion.div>
       </motion.div>
     </div>
   );
