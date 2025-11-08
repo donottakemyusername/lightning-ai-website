@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -13,6 +13,13 @@ interface Feature {
   description: string;
 }
 
+interface Stat {
+  value: number;
+  suffix: string;
+  label: string;
+  prefix?: string;
+}
+
 const features: Feature[] = [
   { icon: '🎯', title: 'AI Precision', description: 'Advanced AI technology for precise applications' },
   { icon: '⏱️', title: 'Time Saving', description: 'Reduce application time from weeks to days' },
@@ -22,16 +29,50 @@ const features: Feature[] = [
   { icon: '📊', title: 'Flexible Billing', description: 'Choose payment options that work for you' }
 ];
 
+const stats: Stat[] = [
+  { value: 30, suffix: '+', label: 'Trusted Clients' },
+  { value: 150, suffix: '+', label: 'Hours Saved Per Client' },
+  { value: 50, suffix: 'K+', label: 'Average Funding Secured', prefix: '$' },
+  { value: 95, suffix: '%', label: 'Client Satisfaction Rate' }
+];
+
 // Animation timing
-const TRACE_DURATION = 2.0;      // Electric line traces logo outline
-const SHIMMER_DURATION = 0.3;    // Subtle energy shimmer
-const FLASH_DURATION = 0.4;      // Bright lightning flash
-const BLOOM_DURATION = 0.8;      // White bloom transition
+const TRACE_DURATION = 2.0;
+const SHIMMER_DURATION = 0.3;
+const FLASH_DURATION = 0.4;
+const BLOOM_DURATION = 0.8;
 const TOTAL_MS = (TRACE_DURATION + SHIMMER_DURATION + FLASH_DURATION + BLOOM_DURATION) * 1000;
+
+// Counter animation component
+const Counter: React.FC<{ value: number; prefix?: string; suffix: string }> = ({ value, prefix = '', suffix }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [displayValue, setDisplayValue] = useState('0');
+
+  useEffect(() => {
+    const controls = animate(count, value, {
+      duration: 2,
+      ease: 'easeOut'
+    });
+
+    return controls.stop;
+  }, [count, value]);
+
+  useEffect(() => {
+    const unsubscribe = rounded.on('change', (latest) => {
+      setDisplayValue(`${prefix}${latest}${suffix}`);
+    });
+
+    return () => unsubscribe();
+  }, [rounded, prefix, suffix]);
+
+  return <span>{displayValue}</span>;
+};
 
 const HomePage: React.FC = () => {
   const [showLoader, setShowLoader] = useState(() => !sessionStorage.getItem('hasSeenLoader'));
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [statsRef, statsInView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   useEffect(() => {
     if (!showLoader) return;
@@ -223,6 +264,35 @@ const HomePage: React.FC = () => {
                   Get Started
                 </Link>
               </motion.div>
+            </div>
+          </motion.section>
+
+          {/* Stats Section */}
+          <motion.section
+            ref={statsRef}
+            className="stats-section"
+            initial={{ opacity: 0, y: 40 }}
+            animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="stats-container">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="stat-card"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={statsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                >
+                  <div className="stat-value">
+                    {statsInView && (
+                      <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+                    )}
+                  </div>
+                  <div className="stat-label">{stat.label}</div>
+                  <div className="stat-glow"></div>
+                </motion.div>
+              ))}
             </div>
           </motion.section>
 

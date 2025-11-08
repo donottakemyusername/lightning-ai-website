@@ -22,7 +22,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(0deg, rgba(96, 165, 250, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(96, 165, 250, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -110,7 +110,7 @@
   margin-top: -3px;
   background: radial-gradient(circle, #ffffff 0%, #60a5fa 50%, transparent 100%);
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     0 0 10px rgba(96, 165, 250, 0.8),
     0 0 20px rgba(255, 255, 255, 0.4);
 }
@@ -119,9 +119,9 @@
 .lightning-flash {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, 
-    rgba(255, 255, 255, 1) 0%, 
-    rgba(96, 165, 250, 0.5) 30%, 
+  background: radial-gradient(ellipse at center,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(96, 165, 250, 0.5) 30%,
     transparent 70%
   );
   z-index: 6;
@@ -132,9 +132,9 @@
 .white-bloom {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, 
-    #0f172a 0%, 
-    #1e1b4b 40%, 
+  background: radial-gradient(ellipse at center,
+    #0f172a 0%,
+    #1e1b4b 40%,
     rgba(15, 23, 42, 0.9) 70%,
     transparent 100%
   );
@@ -158,9 +158,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 140px 40px 100px;
+  padding: 180px 40px 120px; /* Increased top padding from 140px to 180px */
   overflow: hidden;
-  background: 
+  background:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent),
     radial-gradient(ellipse 60% 50% at 50% 120%, rgba(139, 92, 246, 0.12), transparent),
     linear-gradient(180deg, #000000 0%, #0a0e17 50%, #000000 100%);
@@ -171,7 +171,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(0deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
@@ -192,7 +192,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(2px 2px at 20% 30%, rgba(59, 130, 246, 0.4), transparent),
     radial-gradient(2px 2px at 60% 70%, rgba(139, 92, 246, 0.4), transparent),
     radial-gradient(1px 1px at 50% 50%, rgba(96, 165, 250, 0.3), transparent),
@@ -226,8 +226,8 @@
   font-family: 'Orbitron', monospace;
   font-size: 5rem;
   font-weight: 900;
-  background: linear-gradient(135deg, 
-    #ffffff 0%, 
+  background: linear-gradient(135deg,
+    #ffffff 0%,
     #e0e7ff 15%,
     #3b82f6 40%,
     #60a5fa 60%,
@@ -332,9 +332,9 @@
   font-family: 'Rajdhani', sans-serif;
   display: inline-block;
   padding: 18px 56px;
-  background: linear-gradient(135deg, 
-    #3b82f6 0%, 
-    #2563eb 50%, 
+  background: linear-gradient(135deg,
+    #3b82f6 0%,
+    #2563eb 50%,
     #1d4ed8 100%
   );
   color: #ffffff;
@@ -345,7 +345,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 
+  box-shadow:
     0 0 40px rgba(59, 130, 246, 0.3),
     0 4px 20px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -375,7 +375,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
+  background: linear-gradient(90deg,
     transparent,
     rgba(255, 255, 255, 0.3),
     transparent
@@ -389,13 +389,13 @@
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 
+  box-shadow:
     0 0 60px rgba(59, 130, 246, 0.6),
     0 8px 30px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  background: linear-gradient(135deg, 
-    #60a5fa 0%, 
-    #3b82f6 50%, 
+  background: linear-gradient(135deg,
+    #60a5fa 0%,
+    #3b82f6 50%,
     #2563eb 100%
   );
   border-color: rgba(96, 165, 250, 0.8);
@@ -405,30 +405,204 @@
   transform: translateY(-1px);
 }
 
-/* Features Section - Futuristic Grid */
-.features-section {
-  padding: 100px 40px;
-  background: 
-    linear-gradient(180deg, #000000 0%, #0a0e17 50%, #000000 100%);
+/* ================================
+   Stats Section - Animated Counters
+   ================================ */
+.stats-section {
   position: relative;
+  padding: 100px 40px 120px; /* Increased bottom padding from 80px to 120px */
+  background: transparent; /* Changed from gradient to transparent */
+  overflow: hidden;
 }
 
-/* Divider line */
-.features-section::before {
-  content: '';
+/* Removed background grid - keeping section clean */
+.stats-section::before {
+  display: none;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card {
+  position: relative;
+  text-align: center;
+  padding: 40px 24px;
+  background: linear-gradient(135deg,
+    rgba(15, 23, 42, 0.4) 0%,
+    rgba(30, 41, 59, 0.3) 100%
+  );
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Animated glow effect */
+.stat-glow {
   position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(59, 130, 246, 0.5) 20%,
-    rgba(139, 92, 246, 0.5) 50%,
-    rgba(59, 130, 246, 0.5) 80%,
+    #3b82f6 20%,
+    #8b5cf6 50%,
+    #3b82f6 80%,
     transparent 100%
   );
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  background-size: 200% 100%;
+  animation: glowPulse 3s ease-in-out infinite;
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    background-position: 0% 50%;
+    opacity: 0.4;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow:
+    0 16px 48px rgba(59, 130, 246, 0.25),
+    0 0 80px rgba(139, 92, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg,
+    rgba(30, 41, 59, 0.6) 0%,
+    rgba(15, 23, 42, 0.5) 100%
+  );
+}
+
+.stat-card:hover .stat-glow {
+  opacity: 1;
+  height: 4px;
+  animation-duration: 2s;
+}
+
+.stat-value {
+  font-family: 'Orbitron', monospace;
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg,
+    #ffffff 0%,
+    #60a5fa 40%,
+    #a78bfa 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  color: #94a3b8;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Floating particle effect on hover */
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle,
+    rgba(59, 130, 246, 0.2) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.stat-card:hover::after {
+  opacity: 1;
+  animation: statPulse 2s ease-in-out infinite;
+}
+
+@keyframes statPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design for Stats */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .stat-value {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-section {
+    padding: 80px 24px 100px; /* Adjusted for mobile */
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .stat-card {
+    padding: 32px 20px;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================================
+   Features Section - Transparent layout with more spacing
+   ================================ */
+.features-section {
+  padding: 120px 40px 140px; /* Increased from 100px to 120px top, 140px bottom */
+  background: transparent; /* Explicitly transparent */
+  position: relative;
 }
 
 .features-grid {
@@ -436,85 +610,57 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 24px;
+  gap: 32px; /* Increased gap from 24px to 32px */
 }
 
 .feature-card {
-  background: 
-    linear-gradient(135deg,
-      rgba(15, 23, 42, 0.6) 0%,
-      rgba(10, 14, 23, 0.8) 100%
-    );
-  backdrop-filter: blur(10px);
-  padding: 32px 24px;
+  background: transparent; /* Fully transparent */
+  backdrop-filter: none;
+  padding: 36px 28px; /* Increased padding slightly */
   border-radius: 12px;
-  box-shadow: 
-    0 4px 24px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(59, 130, 246, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none;
+  border: none;
   position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  overflow: visible;
+  transition: transform 0.3s ease;
 }
 
-/* Corner accent */
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border-top: 2px solid transparent;
-  border-left: 2px solid transparent;
-  transition: all 0.4s ease;
-}
-
+/* Remove decorative pseudo elements */
+.feature-card::before,
 .feature-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  border-bottom: 2px solid transparent;
-  border-right: 2px solid transparent;
-  transition: all 0.4s ease;
-}
-
-.feature-card:hover::before {
-  border-top-color: #3b82f6;
-  border-left-color: #3b82f6;
-  width: 60px;
-  height: 60px;
-}
-
-.feature-card:hover::after {
-  border-bottom-color: #8b5cf6;
-  border-right-color: #8b5cf6;
-  width: 60px;
-  height: 60px;
+  display: none;
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 
-    0 20px 40px rgba(59, 130, 246, 0.2),
-    0 0 60px rgba(59, 130, 246, 0.1),
-    inset 0 1px 0 rgba(59, 130, 246, 0.2);
-  border-color: rgba(59, 130, 246, 0.4);
-  background: 
-    linear-gradient(135deg,
-      rgba(30, 41, 59, 0.7) 0%,
-      rgba(15, 23, 42, 0.9) 100%
-    );
+  transform: translateY(-6px);
+}
+
+/* Subtle underline accent on hover */
+.feature-card h3 {
+  position: relative;
+}
+
+.feature-card h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.feature-card:hover h3::after {
+  width: 60%;
 }
 
 .feature-icon {
   font-size: 2.8rem;
   margin-bottom: 20px;
   display: block;
-  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
 }
 
 .feature-card h3 {
@@ -539,46 +685,54 @@
 @media (max-width: 1200px) {
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 28px;
   }
-  
+
   .hero-title {
     font-size: 3.5rem;
+  }
+  
+  .hero-section {
+    padding: 160px 40px 100px;
   }
 }
 
 @media (max-width: 768px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 24px;
   }
-  
+
   .hero-section {
-    padding: 120px 24px 80px;
+    padding: 140px 24px 80px;
   }
-  
+
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .cta-button {
     padding: 16px 40px;
     font-size: 1rem;
   }
-  
+
   .feature-card {
-    padding: 24px 16px;
+    padding: 28px 20px;
   }
   
+  .features-section {
+    padding: 100px 24px 120px;
+  }
+
   .logo-trace-container {
     width: 300px;
     height: 300px;
   }
-  
+
   .logo-base img {
     max-width: 250px;
     max-height: 250px;
@@ -588,31 +742,31 @@
 @media (max-width: 480px) {
   .features-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 20px;
   }
-  
+
   .hero-title {
     font-size: 1.8rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
   }
-  
+
   .cta-button {
     padding: 14px 32px;
     font-size: 0.9rem;
   }
-  
+
   .features-section {
-    padding: 60px 20px;
+    padding: 80px 20px 100px;
   }
-  
+
   .logo-trace-container {
     width: 250px;
     height: 250px;
   }
-  
+
   .logo-base img {
     max-width: 200px;
     max-height: 200px;

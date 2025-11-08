@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import '../pages/Contact.css';
 
 const Contact: React.FC = () => {
-  const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,21 +33,6 @@ ${formData.message}`;
 
   return (
     <div className="contact-container">
-      {/* Back to Home button row (in normal flow so it’s always visible) */}
-      <div className="back-row">
-        <motion.button
-          className="back-home-button"
-          onClick={() => navigate('/')}
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.35 }}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          ← Back to Home
-        </motion.button>
-      </div>
-
       <motion.div
         className="contact-hero"
         initial={{ opacity: 0, y: 20 }}
@@ -74,14 +56,14 @@ ${formData.message}`;
             <p>Fill out the form and we'll get back to you within 24 hours</p>
           </div>
 
-          <div className="option-card highlight">
-            <div className="option-icon">📅</div>
-            <h3>Book a Strategy Call</h3>
-            <p>Schedule a free 30-minute consultation to discuss your grant needs</p>
-            <button onClick={handleBookCall} className="book-call-button">
-              Book Your Free Call
-            </button>
-          </div>
+            <div className="option-card highlight">
+              <div className="option-icon">📅</div>
+              <h3>Book a Strategy Call</h3>
+              <p>Schedule a free 30-minute consultation to discuss your grant needs</p>
+              <button onClick={handleBookCall} className="book-call-button">
+                Book Your Free Call
+              </button>
+            </div>
 
           <div className="option-card">
             <div className="option-icon">✉️</div>
