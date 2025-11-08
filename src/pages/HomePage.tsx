@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './HomePage.css';
 import logo from '../assets/images/lightning-ai-logo.png';
+import { Link } from 'react-router-dom';
 
 interface Feature {
   icon: string;
@@ -217,14 +218,11 @@ const HomePage: React.FC = () => {
             <div className="hero-content">
               <h1 className="hero-title">Grant Application Reimagined with AI</h1>
               <p className="hero-subtitle">Lightning AI & Consulting provides an automated and customized system for your grant applications</p>
-              <motion.a 
-                href="/discovery" 
-                className="cta-button"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Started
-              </motion.a>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact" className="cta-button">
+                  Get Started
+                </Link>
+              </motion.div>
             </div>
           </motion.section>
 

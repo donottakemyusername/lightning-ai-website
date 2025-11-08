@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './About.css';
 import jeffreyPhoto from '../assets/images/Jeffrey.jpg';
 import bowenPhoto from '../assets/images/Bowen.jpg';
-
+import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
     return (
@@ -254,9 +254,9 @@ const About: React.FC = () => {
             >
                 <h2>Ready to Transform Your Grant Process?</h2>
                 <p>Let's work together to unlock your organization's full funding potential.</p>
-                <button className="cta-button" onClick={() => window.location.href = '/discovery'}>
+                <Link to="/contact" className="cta-button">
                     Get Started Today
-                </button>
+                </Link>
             </motion.section>
         </div>
     );

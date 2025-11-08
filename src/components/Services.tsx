@@ -86,14 +86,12 @@ const Services: React.FC = () => {
         transition={{ delay: 1 }}
       >
         <h2>Ready to Transform Your Grant Application Process?</h2>
-        <motion.a 
-          href="/contact" 
-          className="cta-button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Get Started Today
-        </motion.a>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link to="/contact" className="cta-button">
+            Get Started Today
+          </Link>
+        </motion.div>
+      </motion.div>
       </motion.div>
     </div>
   );
