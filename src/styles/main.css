@@ -39,9 +39,9 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 30px rgba(59, 130, 246, 0.2);
 }
 
-header {
-    max-width: 1400px;
-    margin: 0 auto;
+/* Avoid globally constraining <header> elements; use an inner wrapper instead */
+.header-inner {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

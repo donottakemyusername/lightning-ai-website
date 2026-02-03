@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useMotionValue, useTransform, animate } from '
 import { useInView } from 'react-intersection-observer';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Services from '../components/Services';
 import './HomePage.css';
 import logo from '../assets/images/lightning-ai-logo.png';
 import { Link } from 'react-router-dom';
@@ -264,43 +265,46 @@ const HomePage: React.FC = () => {
                   Get Started
                 </Link>
               </motion.div>
+
+              {/* Stats Cards (moved up under CTA) */}
+              <motion.div
+                ref={statsRef}
+                className="hero-stats"
+                initial={{ opacity: 0, y: 24 }}
+                animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+              >
+                <div className="stats-container">
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      className="stat-card"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={statsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.5, delay: 0.08 * index }}
+                    >
+                      <div className="stat-value">
+                        {statsInView && (
+                          <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+                        )}
+                      </div>
+                      <div className="stat-label">{stat.label}</div>
+                      <div className="stat-glow"></div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </motion.section>
 
-          {/* Stats Section */}
-          <motion.section
-            ref={statsRef}
-            className="stats-section"
-            initial={{ opacity: 0, y: 40 }}
-            animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="stats-container">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="stat-card"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={statsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                >
-                  <div className="stat-value">
-                    {statsInView && (
-                      <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-                    )}
-                  </div>
-                  <div className="stat-label">{stat.label}</div>
-                  <div className="stat-glow"></div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
+          {/* How It Works / Services (embedded) */}
+          <Services variant="home" id="services" />
 
           {/* Features Grid */}
           <section className="features-section">
             <motion.div 
               ref={ref}
-              className="features-grid"
+              className="home-features-grid"
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={{
@@ -314,11 +318,11 @@ const HomePage: React.FC = () => {
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="feature-card"
+                  className="home-feature-card"
                   variants={fadeInUp}
                   whileHover={{ y: -8, transition: { duration: 0.2 } }}
                 >
-                  <div className="feature-icon">{feature.icon}</div>
+                  <div className="home-feature-icon">{feature.icon}</div>
                   <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </motion.div>

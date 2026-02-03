@@ -4,7 +4,21 @@ import { useInView } from 'react-intersection-observer';
 import './Services.css';
 import { Link } from 'react-router-dom';
 
-const Services: React.FC = () => {
+type ServicesVariant = 'page' | 'home';
+
+interface ServicesProps {
+  variant?: ServicesVariant;
+  id?: string;
+  title?: string;
+  intro?: string;
+}
+
+const Services: React.FC<ServicesProps> = ({
+  variant = 'page',
+  id,
+  title,
+  intro
+}) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -37,63 +51,78 @@ const Services: React.FC = () => {
     }
   ];
 
+  const defaultTitle = variant === 'home' ? 'How It Works' : 'Our Services';
+  const defaultIntro =
+    variant === 'home'
+      ? 'A streamlined, AI-assisted process backed by human experts—so you can apply faster, smarter, and with confidence.'
+      : 'Lightning AI & Consulting combines human expertise with cutting-edge AI to revolutionize your grant application process. We ensure you have the best chance of securing funding while saving time and resources.';
+
+  const HeadingTag: React.ElementType = variant === 'home' ? 'h2' : 'h1';
+  const containerVariantClass = variant === 'home' ? 'services-section--home' : 'services-section--page';
+  const ctaVariantClass = variant === 'home' ? 'services-cta--home' : 'services-cta--page';
+
   return (
-    <div className="services-container">
-      <motion.div 
-        className="services-header"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1>Our Services</h1>
-        <p>Lightning AI & Consulting combines human expertise with cutting-edge AI to revolutionize your grant application process. We ensure you have the best chance of securing funding while saving time and resources.</p>
-      </motion.div>
-
-      <motion.div 
-        ref={ref}
-        className="phases-grid"
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.2
-            }
-          }
-        }}
-      >
-        {phases.map((phase, index) => (
-          <motion.div
-            key={index}
-            className="phase-card"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 }
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="phase-icon">{phase.icon}</div>
-            <div className="phase-number">Phase {phase.number}</div>
-            <h3>{phase.title}</h3>
-            <p>{phase.description}</p>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div 
-        className="cta-section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
-        <h2>Ready to Transform Your Grant Application Process?</h2>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link to="/contact" className="cta-button">
-            Get Started Today
-          </Link>
+    <section
+      id={id}
+      className={`services-section ${containerVariantClass}`}
+    >
+      <div className="services-inner">
+        <motion.div 
+          className="services-header"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <HeadingTag>{title ?? defaultTitle}</HeadingTag>
+          <p>{intro ?? defaultIntro}</p>
         </motion.div>
-      </motion.div>
-    </div>
+
+        <motion.div 
+          ref={ref}
+          className="phases-grid"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+        >
+          {phases.map((phase, index) => (
+            <motion.div
+              key={index}
+              className="phase-card"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="phase-icon">{phase.icon}</div>
+              <div className="phase-number">Phase {phase.number}</div>
+              <h3>{phase.title}</h3>
+              <p>{phase.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div 
+          className={`services-cta ${ctaVariantClass}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          <h2>Ready to Transform Your Grant Application Process?</h2>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link to="/contact" className="cta-button">
+              Get Started Today
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

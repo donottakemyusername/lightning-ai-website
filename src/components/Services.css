@@ -1,7 +1,44 @@
-.services-container {
+.services-section {
+  width: 100%;
+  font-family: 'Space Grotesk', 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.services-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 24px;
+}
+
+/* Full page variant */
+.services-section--page {
+  background: linear-gradient(135deg, #0a0e17 0%, #000000 100%);
+}
+
+.services-section--page .services-inner {
+  min-height: 100vh;
+}
+
+/* Home page variant (full-width, blends into Home) */
+.services-section--home {
+  background: transparent;
+  position: relative;
+}
+
+.services-section--home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59, 130, 246, 0.10), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(139, 92, 246, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.services-section--home .services-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  padding: 120px 40px 140px;
 }
 
 .services-header {
@@ -9,7 +46,9 @@
   margin-bottom: 80px;
 }
 
-.services-header h1 {
+.services-header h1,
+.services-header h2 {
+  font-family: 'Orbitron', monospace;
   font-size: 3rem;
   font-weight: 800;
   background: linear-gradient(90deg, #4f8cff 0%, #38e8ff 100%);
@@ -18,12 +57,21 @@
   margin-bottom: 24px;
 }
 
+.services-section--home .services-header h2 {
+  font-size: 2.5rem;
+}
+
 .services-header p {
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.2rem;
   color: #385a8a;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.services-section--home .services-header p {
+  color: rgba(226, 232, 240, 0.85);
 }
 
 .phases-grid {
@@ -39,6 +87,15 @@
   padding: 32px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.06);
   transition: transform 0.3s ease;
+}
+
+.services-section--home .phase-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
 }
 
 .phase-card:hover {
@@ -59,6 +116,10 @@
   margin-bottom: 12px;
 }
 
+.services-section--home .phase-number {
+  color: rgba(96, 165, 250, 0.95);
+}
+
 .phase-card h3 {
   font-size: 1.5rem;
   color: #2a3d66;
@@ -66,7 +127,60 @@
   font-weight: 700;
 }
 
+.services-section--home .phase-card h3 {
+  color: rgba(248, 250, 252, 0.95);
+}
+
 .phase-card p {
   color: #385a8a;
   line-height: 1.6;
+}
+
+.services-section--home .phase-card p {
+  color: rgba(226, 232, 240, 0.82);
+}
+
+/* Services CTA (avoid global .cta-section styles) */
+.services-cta {
+  text-align: center;
+  padding: 64px 24px 0;
+}
+
+.services-cta h2 {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.services-cta--page {
+  color: white;
+}
+
+.services-cta--page h2 {
+  text-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+}
+
+.services-cta--home {
+  color: rgba(248, 250, 252, 0.95);
+}
+
+.services-cta--home h2 {
+  text-shadow: 0 0 32px rgba(59, 130, 246, 0.35);
+}
+
+@media (max-width: 768px) {
+  .services-section--home .services-inner {
+    padding: 100px 24px 120px;
+  }
+
+  .services-header {
+    margin-bottom: 56px;
+  }
+
+  .services-section--home .services-header h2 {
+    font-size: 2.1rem;
+  }
 }
