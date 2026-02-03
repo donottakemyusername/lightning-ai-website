@@ -158,7 +158,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 180px 40px 120px; /* Increased top padding from 140px to 180px */
+  padding: 140px 40px 90px;
   overflow: hidden;
   background:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent),
@@ -225,23 +225,28 @@
 
 /* Stats moved into hero (directly under CTA) */
 .hero-stats {
-  margin-top: 56px;
+  margin-top: 44px;
 }
 
 /* In hero, keep the cards tighter and a bit smaller */
 .hero-stats .stats-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   gap: 32px;
+  grid-template-columns: repeat(4, minmax(260px, 320px));
+  justify-content: center;
 }
 
 .hero-stats .stat-card {
   padding: 32px 24px;
+  overflow: visible;
 }
 
 .hero-stats .stat-value {
   font-size: 3.1rem;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .hero-title {
@@ -259,7 +264,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   line-height: 1.1;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -332,7 +337,7 @@
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.4rem;
   color: #94a3b8;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   line-height: 1.7;
   font-weight: 400;
   max-width: 1050px;
@@ -723,7 +728,7 @@
   }
   
   .hero-section {
-    padding: 160px 40px 100px;
+    padding: 130px 32px 80px;
   }
 }
 
@@ -734,7 +739,7 @@
   }
 
   .hero-section {
-    padding: 140px 24px 80px;
+    padding: 120px 24px 70px;
   }
 
   .hero-title {
